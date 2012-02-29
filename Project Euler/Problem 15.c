@@ -22,7 +22,6 @@
  */
  
 #include <stdio.h>
-
 int main(){
 	int i;
 	unsigned long n=2;
