@@ -22,12 +22,52 @@
  */
  
 #include <stdio.h>
+#include <unistd.h>
+
+void ltree(int,int,int);
+void rtree(int,int,int);
+unsigned long long l=0;
+
 int main(){
-	int i;
-	unsigned long n=2;
-	for(i=2;i<=20;i++){
-		n=n*3;
-	}
-	printf("The value at 20 is %ld\n",n);
+	int n=20,pid;
+	//pid=fork();
+	//if(!pid)
+	ltree(0,0,n);
+	//else
+		//rtree(0,0,n);
+	printf("The total number of possibilities for a %d x %d square is %lld\n",n,n,l);
 	return 0;
+}
+
+void ltree(int x, int y, int n){
+	if((x==n)&&(y==n)){
+		l++; // Check for value zero.
+		return;
+	}
+	if(x<n){
+		x++;
+		ltree(x,y,n);
+		if(y<n)
+			rtree(x,y,n);
+	}
+	else{
+		return;
+	}
+}
+
+void rtree(int x, int y, int n){
+	if((x==n)&&(y==n)){
+		l++; // Check for value zero.
+		return;
+	}
+	if(y<n){
+		y++;
+		if(x<n)
+			ltree(x,y,n);
+		rtree(x,y,n);
+	}
+	else{
+		return;
+	}
+
 }
