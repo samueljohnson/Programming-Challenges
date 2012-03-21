@@ -1,5 +1,5 @@
 /*
- * Problem 15.c
+ * Problem 16.c
  * 
  * Copyright 2012 Samuel Johnson <esamueljohnson@gmail.com>
  * 
@@ -21,56 +21,16 @@
  * 
  */
  
-//This is a brute force approach that won't work for n=20
-//Actual solution is the answer of 40C20
- 
 #include <stdio.h>
-#include <unistd.h>
-
-void ltree(int,int,int);
-void rtree(int,int,int);
-unsigned long long l=0;
 
 int main(){
-	int n=2,pid;
-	//pid=fork();
-	//if(!pid)
-		//ltree(0,0,n);
-	//else
-		rtree(0,0,n);
-	printf("The total number of possibilities for a %d x %d square is %lld\n",n,n,2*l);
+	FILE *fp=fopen("./Problem16.txt","r");
+	int sum=0,c;
+	while((c=fgetc(fp))!=EOF){
+		c-=48; //ASCII code to number conversion
+		sum+=c;
+	}
+	printf("The sum is %d\n",sum);
 	return 0;
 }
-
-void ltree(int x, int y, int n){
-	if((x==n)&&(y==n)){
-		l++;
-		return;
-	}
-	if(x<n){
-		x++;
-		ltree(x,y,n);
-		if(y<n)
-			rtree(x,y,n);
-	}
-	else{
-		return;
-	}
-}
-
-void rtree(int x, int y, int n){
-	if((x==n)&&(y==n)){
-		l++;
-		return;
-	}
-	if(y<n){
-		y++;
-		if(x<n)
-			ltree(x,y,n);
-		rtree(x,y,n);
-	}
-	else{
-		return;
-	}
-
-}
+	
