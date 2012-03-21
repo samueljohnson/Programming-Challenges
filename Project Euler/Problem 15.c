@@ -21,8 +21,9 @@
  * 
  */
  
-//This is a brute force approach that won't work for n=20
-//Actual solution is the answer of 40C20
+// This is a brute force approach that won't work for n=20
+// Actual solution is the answer of 40C20
+// i.e. 137846528820
  
 #include <stdio.h>
 #include <unistd.h>
