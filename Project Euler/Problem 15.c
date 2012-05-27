@@ -33,7 +33,7 @@ void rtree(int,int,int);
 unsigned long long l=0;
 
 int main(){
-	int n=2,pid;
+	int n=10,pid;
 	//pid=fork();
 	//if(!pid)
 		//ltree(0,0,n);
