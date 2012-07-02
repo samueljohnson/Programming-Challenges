@@ -8,7 +8,7 @@
 #include<stdio.h>
 
 int main () {
-  int i=2, check,checked=0;
+  unsigned int i=2, check,checked=0;
   while(i++) {
     for(check=20;check>=2;check--) {
       if(i%check)

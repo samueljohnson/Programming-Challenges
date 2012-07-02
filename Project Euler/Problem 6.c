@@ -22,13 +22,11 @@ int is_prime(int p) {
 }
 
 int main () {
-  int i=1,counter=0;
-  while(i++) {
-    if(is_prime(i)) {
+  int i,counter=0;
+  #pragma omp parallel for private(counter)
+  for(i=1;counter<=10001;i++) {
+    if(is_prime(i))
       counter++;
-    }
-    if(counter==10001)
-      break;
   }
   printf("The required prime is %d\n",i);
   return 0;

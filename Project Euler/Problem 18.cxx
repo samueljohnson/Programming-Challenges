@@ -21,13 +21,14 @@
  * 
  */
  
-#include <iostream>
+//#include <iostream>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
 
 #define digits 14
+
 char *binary (unsigned int v) {
 static char binstr[17] ;
 int i;
@@ -37,16 +38,15 @@ for (i=0; i<digits; i++) {
 binstr[digits-1-i] = v & 1 ? '1' : '0' ;
 v = v / 2 ;
 }
-
 return binstr;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-	int i,j,cl=0,ite=0,nextnumber,n;
-	char num[3],line[100];
-	unsigned long int sum=0,greatest=0;
 	FILE *in=fopen("./Problem 18.txt","r");
+	int i=0,j=0,cl=0,ite=0,nextnumber=0,n=0;	
+	char num[3],line[100];
+	unsigned long int sum=0,greatest=0;	
 	fgets(line,10,in);
 	sum=atoi(line);
 	for(i=0;i<pow(2,digits);i++){
@@ -72,15 +72,15 @@ int main(int argc, char **argv)
 		}
 		if(sum>greatest)
 			greatest=sum;
-		printf("Sum is %ld\n",sum);
+		//printf("Sum is %ld\n",sum);
 		ite++;
 		sum=75;
 		rewind(in);
 		cl=0;
 		fgets(line,10,in);
 		nextnumber=0;
-		printf("\n");
 	}
 	printf("\nGreatest sum is %ld",greatest);
+	fclose(in);
 	return 0;
 }
