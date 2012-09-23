@@ -1,4 +1,4 @@
- /* Program to find the 10001st prime number.
+ /* Program to find the 10001st prime number. 
  * Problem 6 of projecteuler.net
  * 
  * 
