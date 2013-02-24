@@ -22,6 +22,7 @@
  */
 
 #include <stdio.h>
+
 int sopd(int num){
 	int sum=1,i;
 	for(i=2;i<=num/2;i++)
@@ -29,6 +30,7 @@ int sopd(int num){
 			sum+=i;
 	return sum;
 }
+
 int main(){
 	int i,sum=0;
 	for(i=2;i<10000;i++)
